@@ -1,0 +1,26 @@
+$with: 1230px;
+
+.body-container {
+    width: $with;
+    margin: auto;
+
+    .book-list {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        gap: 15px;
+
+        .book-item {
+
+            img {
+                width: 191px;
+                height: 248px;
+            }
+
+            h3 {
+                display: inline;
+                font-size: 14px;
+                color: #2b2b2b;
+            }
+        }
+    }
+}

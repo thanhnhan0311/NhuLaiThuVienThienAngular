@@ -1,0 +1,28 @@
+$with: 1230px;
+.header-container{   
+    width: $with;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    .logo{
+
+    }
+    .search-text{
+        position: relative;        
+        width: 240px;    
+        input{
+            height: 40%; 
+            width: 100%;                   
+            position: absolute;
+            background: #F0F0F0;
+            outline: none;
+            border: none;            
+            border-radius: 8px;
+        }
+        .icon{
+            position: absolute;
+            top: 5px;
+            right: 5px;
+        }
+    }
+}

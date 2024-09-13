@@ -1,0 +1,30 @@
+$with: 1230px;
+$background-color : #F0F0F0;
+$color : #666666;
+.book-information-container{
+    width: $with;
+    margin: auto;
+    display: flex;
+    
+    .book-image{
+        flex: 1;
+        
+    }
+
+    .book-details{
+        flex: 2;
+        
+        .contents{
+            width: 585px;
+            height: 500px;
+            background-color: $background-color;
+            border-radius: 8px;
+            text-align: center;
+        }
+    }
+
+    .book-another{
+        flex: 1;
+        
+    }
+}
