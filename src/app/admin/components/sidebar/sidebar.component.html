@@ -1,0 +1,18 @@
+<div class="side-bar-container">
+  <div class="side-bar-logo">Admin</div>
+  <div class="options-list">
+    <div
+      #optionList
+      class="option-item"
+      *ngFor="let item of optionsListProperties; let i = index"
+    >
+      <div (click)="test(i)">
+        <fa-icon [icon]="item.icon"></fa-icon>
+        {{ item.name }}
+      </div>
+      <ul class="child-list" *ngFor="let childItem of item.chidlist">
+        <li class="child-item"><a [routerLink]="childItem.url">{{childItem.name}}</a></li>       
+      </ul>
+    </div>
+  </div>
+</div>

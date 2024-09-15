@@ -1,0 +1,102 @@
+<div class="create-product-container">
+  <h1>Create Book</h1>
+  <form (ngSubmit)="PostBook()" [formGroup]="bookCreateFormGroup">
+    <div>
+      <label>book_name</label>
+      <input formControlName="book_name" />
+      <span
+        *ngIf="
+          bookCreateFormGroup.get('book_name').invalid &&
+          (bookCreateFormGroup.get('book_name').dirty ||
+            bookCreateFormGroup.get('book_name').touched)
+        "
+        style="color: red"
+      >
+        <span *ngIf="bookCreateFormGroup.get('book_name').getError('required')"
+          >Name is required</span
+        >
+      </span>
+    </div>
+    <div>
+      <label>book_author</label>
+      <input formControlName="book_author" />
+      <span
+        *ngIf="
+          bookCreateFormGroup.get('book_author').invalid &&
+          (bookCreateFormGroup.get('book_author').dirty ||
+            bookCreateFormGroup.get('book_author').touched)
+        "
+        style="color: red"
+      >
+        <span
+          *ngIf="bookCreateFormGroup.get('book_author').getError('required')"
+          >Author is required</span
+        >
+      </span>
+    </div>
+    <div>
+      <label>book_category</label>
+      <input formControlName="book_category" />
+      <span
+        *ngIf="
+          bookCreateFormGroup.get('book_category').invalid &&
+          (bookCreateFormGroup.get('book_category').dirty ||
+            bookCreateFormGroup.get('book_category').touched)
+        "
+        style="color: red"
+      >
+        <span
+          *ngIf="bookCreateFormGroup.get('book_category').getError('required')"
+          >Category is required</span
+        >
+      </span>
+    </div>
+    <div>
+      <label>book_description</label>
+      <input formControlName="book_description"/>
+      <span
+        *ngIf="
+          bookCreateFormGroup.get('book_description').invalid &&
+          (bookCreateFormGroup.get('book_description').dirty ||
+            bookCreateFormGroup.get('book_description').touched)
+        "
+        style="color: red"
+      >
+        <span
+          *ngIf="
+            bookCreateFormGroup.get('book_description').getError('required')
+          "
+          >Description is required</span
+        >
+      </span>
+    </div>
+    <div>
+      <label>book_image</label>
+      <input
+        type="file"
+        (change)="onFileSelected($event)"
+        formControlName="file_image"
+      />
+      <span
+        *ngIf="
+          bookCreateFormGroup.get('file_image').invalid &&
+          (bookCreateFormGroup.get('file_image').dirty ||
+            bookCreateFormGroup.get('file_image').touched)
+        "
+        style="color: red"
+      >
+        <span *ngIf="bookCreateFormGroup.get('file_image').getError('required')"
+          >Image is required</span
+        >
+      </span>
+    </div>
+    <div>
+      <input type="submit" [disabled]="bookCreateFormGroup.invalid"/>
+    </div>
+  </form>
+</div>
+
+
+<textarea id="w3review" name="w3review" rows="4" cols="50">
+  At w3schools.com you will learn how to make a website. They offer free tutorials in all web development technologies.
+  </textarea>

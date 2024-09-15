@@ -1,0 +1,40 @@
+$width: 280px;
+$height: 838px;
+$background-color : #F0F0F0;
+$color : #666666;
+
+.side-bar-container {
+    width: $width;
+    height: $height;
+    border: 1px solid $background-color;
+    display: flex;
+    flex-direction: column;
+
+    .side-bar-logo {
+        color: #e83e8c;
+        text-align: center;
+        padding: 1rem;
+        border-bottom: 1px solid black;
+    }
+
+    .options-list {
+
+        .option-item {
+            padding: 0.5rem;
+            cursor: pointer;
+        }
+
+        .child-list {
+            display: none;
+
+            .child-item {
+                padding: 0.5rem;
+            }
+        }
+
+        .open {
+            display: block;
+        }
+
+    }
+}
