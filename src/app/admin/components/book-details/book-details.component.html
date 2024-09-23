@@ -1,0 +1,59 @@
+<div class="book-details-container">
+  <div class="left">
+    <div class="book-information">
+      <h4>Book Information</h4>
+      <form (ngSubmit)="PutBook()" [formGroup]="bookUpdateFormGroup">
+        <div>
+          <img
+            [src]="GetFirebaseUrl(book?.book_image)"
+            style="width: 191px; height: 248px"
+          />
+        </div>
+        <div>
+          <label for="">Name</label>
+          <input formControlName="book_name" />
+        </div>
+        <div>
+          <label for="">Author</label>
+          <input formControlName="book_author" />
+        </div>
+        <div>
+          <label for="">Category</label>
+          <input formControlName="book_category" />
+        </div>
+        <div>
+          <label for="">Description</label>
+          <input formControlName="book_description" />
+        </div>
+        <input type="submit" />
+      </form>
+    </div>
+    <div class="chapter-list">
+      <h2>
+        Chapter List <button (click)="AddNewChapter()">Add New Chapter</button>
+      </h2>
+      <div
+        style="margin: 5px 0px"
+        class="chapter-item"
+        *ngFor="let chapter of book?.chapters"
+      >
+        <h4 style="margin: 5px 0px">{{ chapter.chapter_name }}</h4>
+        <input
+          [(ngModel)]="chapter.chapter_name"
+          [hidden]="!chapter.isEditing"
+        />
+        <div class="chapter-action">
+          <button (click)="ToggleEdit(chapter)">Edit</button>
+          <button (click)="ToggleEditContent(chapter)">Edit Content</button>
+          <button (click)="ToggleDeleteChapter(chapter)">Delete</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="right">
+    <p-editor
+      [(ngModel)]="chapterEdit.chapter_content"
+      [style]="{ height: '320px' }"
+    />
+  </div>
+</div>

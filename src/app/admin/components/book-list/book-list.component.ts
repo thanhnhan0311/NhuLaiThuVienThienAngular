@@ -3,12 +3,13 @@ import { BookDto } from '../../interface/response';
 import { BookService } from '../../services/book.service';
 import { CommonModule } from '@angular/common';
 import { FirebaseService } from '../../../user/services/firebase.service';
+import { RouterModule } from '@angular/router';
 
 
 @Component({
   selector: 'app-book-list',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule,RouterModule],
   templateUrl: './book-list.component.html',
   styleUrl: './book-list.component.scss'
 })

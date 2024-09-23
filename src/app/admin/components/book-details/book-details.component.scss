@@ -1,0 +1,18 @@
+.book-details-container{
+    display: flex;
+    flex-direction: row;
+
+    .left{
+        display: flex;
+        flex-direction: column;
+
+        label{
+            display: inline-block;
+            width: 150px;
+        }
+    }
+
+    .right{
+        flex:1
+    }
+}

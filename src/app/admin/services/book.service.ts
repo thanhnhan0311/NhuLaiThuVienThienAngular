@@ -18,4 +18,12 @@ export class BookService {
   CreateBookForAdmin(bookFormData : FormData):Observable<any>{
       return this._http.post(this.bookApiUrl,bookFormData);
   }  
+
+  GetDetailsBookForAdmin(bookId : number):Observable<BookDto>{
+      return this._http.get<BookDto>(`${this.bookApiUrl}/book?bookId=${bookId}`);
+  }
+
+  PutBookForAdmin(bookUpdateFormData: FormData):Observable<any>{
+    return this._http.put(`${this.bookApiUrl}`,bookUpdateFormData);
+  }
 }
